@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1474418946 source:c:\users\asus\desktop\being zero\wordament\main.cpp
+	<bits/stdc++.h>
+	<iostream>
+	"trie.h"
+
+1474418619 c:\users\asus\desktop\being zero\wordament\trie.h
+	<iostream>
+
