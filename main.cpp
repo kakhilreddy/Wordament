@@ -1,7 +1,7 @@
-#include<bits/stdc++.h>
-#include<iostream>
+#include<stdio.h>
+#include<string.h>
 #include "trie.h"
-using namespace std;
+
 #define ROWS    4
 #define COLS    4
 char board[ROWS][COLS];
@@ -61,15 +61,15 @@ void printBoard()
 {
     int i, j;
 
-    cout<<"  ";
+    printf("  ");
     for(i=0;i<COLS;i++)
-        cout<<i<<" ";
-    cout<<endl;
+        printf("%d ",i);
+    printf("\n);
 
     for(i=0;i<ROWS;i++)
     {
-        cout<<i<<" ";
-        for(j=0;j<ROWS;j++)
+        printf("%d ",i);
+	    for(j=0;j<ROWS;j++)
             printf("%c ", board[i][j]);
         printf("\n");
     }
@@ -77,8 +77,8 @@ void printBoard()
 }
 bool containsWord(char *s)
 {
-
-    for(int i=0;i<c;i++)
+int i;
+    for( i=0;i<c;i++)
         if(strcmp(s,validWords[i])==0)
         return true;
     return false;
@@ -121,30 +121,30 @@ for(i=0;i<ROWS;i++)
 	printWordsStartingWith(i, j);
 	 int m=0;
 	     char w[100];
-	do{ cout<<"Score :"<<points<<endl;
- cout<<"current word is : "<<w<<endl;
-            cout<<"Choose any row and column (i,j) \n";
+	do{ printf("Score : %d\n",points);
+ printf("current word is : %d\n",w);
+            printf("Choose any row and column (i,j) \n");
                     printBoard();
     int x,y;
-    cin>>x>>y;
+    scanf("%d%d",&x,&y);
 
 
-    cout<<"The letter selected is : "<<board[x][y]<<endl;
+    printf("The letter selected is : %d\n",board[x][y]);
     w[m++]=board[x][y];
     w[m]='\0';
 
     if(containsWord(w))
     {
-        cout<<"Match found \n";
+        printf("Match found \n");
         points++;
 
         m=0;
         w[m]='\0';
     }
 
-	cout<<"Do you want to continue game (Y/N)?"<<endl;
+	printf("Do you want to continue game (Y/N)?\n");
 	char c;
-	cin>>c;
+	scanf("%c",&c);
 	if(c=='N'|| c=='n')
         break;
 
