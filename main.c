@@ -64,7 +64,7 @@ void printBoard()
     printf("  ");
     for(i=0;i<COLS;i++)
         printf("%d ",i);
-    printf("\n);
+    printf("\n");
 
     for(i=0;i<ROWS;i++)
     {
