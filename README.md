@@ -3,11 +3,6 @@
  Game consists of a 4 by 4 matrix of letters from the English alphabet.
  Players form meaningful English words by selecting letters one by one to obtain points.
  
- PROBLEM STATEMENT
- 
-Solve sub problem of wordament by generating all possible
-combinations of 3 or more letter words from the GAME.
-All words generated must be valid dictionary words.
 
 Input
 
