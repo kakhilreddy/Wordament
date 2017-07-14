@@ -1,8 +1,8 @@
 #ifndef TRIE_H_INCLUDED
 #define TRIE_H_INCLUDED
 #define	ALPHABET_SIZE	26
-#include<iostream>
-using namespace std;
+#include<stdio.h>
+
 struct TNode
 {
 	bool isEOW;
@@ -43,9 +43,9 @@ TNode *createTrieNode()
     return newNode;
 }
 bool insertWordInTrie(TNode *root, char *word)
-{
+{int i;
   int len=strlen(word);
-  for(int i=0;i<len;i++)
+  for( i=0;i<len;i++)
   {
   if(root->next[word[i]-'a']==NULL)
     root->next[word[i]-'a']=createTrieNode();
@@ -64,13 +64,13 @@ bool insertWordInTrie(TNode *root, char *word)
 char str[10000];
 int index=0;
 void printWordsInTrie(TNode* root){
-
+int i;
   if(root==NULL)
     return;
   if(root->isEOW)
   { str[index]='\0';
-    cout<<str<<endl;}
-  for(int i=0;i<26;i++)
+    printf("%s\n",str);}
+  for( i=0;i<26;i++)
   {
 
    if(root->next[i]!=NULL)
@@ -89,13 +89,13 @@ void printWordsInTrie(TNode* root){
 }
 TNode* initializeTrie(TNode *root)
 {
-     fstream fs("words.txt");
-    while(!fs.eof())
+     FILE * fs=fopen("words.txt","r+");
+    while(!feof(fs))
     {
 
         char temp[100];
-        fs>>temp;
-        //cout<<temp<<endl;
+        fscanf(fs,"%s",temp);
+       
         insertWordInTrie(root,temp);
 
     }
